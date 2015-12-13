@@ -4,7 +4,6 @@ LOGNAME="categories.log"
 DELIMITATION=','
 
 class Categories:
-    mapWordsToCategories = []
     def __init__(self, categoriesFilename):
         try:
             categoriesLog = open(LOGNAME, 'w')

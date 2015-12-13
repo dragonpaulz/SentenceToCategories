@@ -14,11 +14,10 @@ class Sentences:
             with open(sentencesFilename, 'rb') as sentencesReadFile:
                 sentences = csv.reader(sentencesReadFile, delimiter=DELIMITATION)
                 for sentence in sentences:
-                    print sentence
+                    print sentence[0].split()
                 
             sentencesLog.close()
         except csv.Error as e:
             print "I/O error({0}): {1}".format(e.errno, e.strerror)
         except Exception:
             print "Sentences Exception at __init__"
-            
