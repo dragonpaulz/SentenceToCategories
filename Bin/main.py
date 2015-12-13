@@ -3,8 +3,8 @@ import Sentences
 import logging
 
 #configuration:
-CATEGORIESFILE="..\Data\Categories.xlsx"
-SENTENCESFILE="..\Data\Sentences.xlsx"
+CATEGORIESFILE="..\Data\Categories.csv"
+SENTENCESFILE="..\Data\Sentences.csv"
 LOGGERFILE="ParserLog.log"
 LOGGERDETAIL=logging.INFO
 FORMAT="Level:%(levelno)s\tModule:%(module)s\tLine:%(lineno)d\t%(message)s"
