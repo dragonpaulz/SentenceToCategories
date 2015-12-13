@@ -21,7 +21,7 @@ class Categories:
                 for row in categoriesCSVFile:
                     for x in range(len(row)):
                         if(row[x] != ''):
-                            categoriesMap[row[x]] = categoriesList[x]
+                            categoriesMap[row[x]] = x
 
             categoriesLog.close()
         except csv.Error as e:
