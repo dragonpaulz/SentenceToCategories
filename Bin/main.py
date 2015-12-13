@@ -20,12 +20,13 @@ def main():
     sentences = Sentences.Sentences(SENTENCESFILE)
     logging.info("Completed extracting sentences")
     output = createOutputFile()
+    print categories.getNamesOfCategories()
     output.writerow(categories.getNamesOfCategories())
     
 def createOutputFile():
     try:
-        with open(OUTPUTFILE, 'w') as csvOut:
-            return csv.writer(csvOut, delimiter = ',')
+        csvOut = open(OUTPUTFILE, 'w')
+        return csv.writer(csvOut, delimiter = ',')
     except:
         print "Exception creating output file. Will write result to screen"
         return sys.stdout
