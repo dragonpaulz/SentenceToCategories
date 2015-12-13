@@ -8,7 +8,7 @@ class Sentences:
     def __init__(self, sentencesFilename):
         try:
             sentencesLog = open(LOGNAME, 'w')
-        except IOError as E:
+        except IOError:
             categoriesLog = sys.stdout
         try:
             with open(sentencesFilename, 'rb') as sentencesReadFile:

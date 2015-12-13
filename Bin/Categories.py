@@ -8,7 +8,7 @@ class Categories:
     def __init__(self, categoriesFilename):
         try:
             categoriesLog = open(LOGNAME, 'w')
-        except IOError as E:
+        except IOError:
             categoriesLog = sys.stdout
         try:
             with open(categoriesFilename, 'rb') as categoriesReadFile:
