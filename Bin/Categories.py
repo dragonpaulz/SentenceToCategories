@@ -12,10 +12,21 @@ class Categories:
             categoriesLog = sys.stdout
         try:
             with open(categoriesFilename, 'rb') as categoriesReadFile:
-                csv.reader(categoriesReadFile, delimiter=DELIMITATION)
+                categoriesCSVFile = csv.reader(categoriesReadFile, delimiter=DELIMITATION)
+                
+                #Get category names
+                categoriesList = categoriesCSVFile.next()
+                categoriesMap = {}
+
+                for row in categoriesCSVFile:
+                    for x in range(len(row)):
+                        if(row[x] != ''):
+                            categoriesMap[row[x]] = categoriesList[x]
+                            
+            print categoriesMap
 
             categoriesLog.close()
         except csv.Error as e:
             print "I/O error({0}): {1}".format(e.errno, e.strerror)
-        except error as e:
-            print "Categories error ({0}): {1}".format(e.errno, e.strerror)
+        except Exception:
+            print "Categories Exception at __init__"
