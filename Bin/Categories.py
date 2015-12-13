@@ -22,8 +22,6 @@ class Categories:
                     for x in range(len(row)):
                         if(row[x] != ''):
                             categoriesMap[row[x]] = categoriesList[x]
-                            
-            print categoriesMap
 
             categoriesLog.close()
         except csv.Error as e:
