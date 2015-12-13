@@ -30,3 +30,14 @@ class Categories:
             print "I/O error({0}): {1}".format(e.errno, e.strerror)
         except Exception:
             print "Categories Exception at __init__"
+    
+    # Returns the list of the category names
+    def getNamesOfCategories(self):
+        return categoriesList
+    
+    # Returns the name of the category for which the word belongs, or None
+    def getWordsCategory(self, word):
+        if(word in categoriesMap):
+            return categoriesMap[word]
+        else:
+            return None
