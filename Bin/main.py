@@ -3,6 +3,7 @@ import Sentences
 import logging
 import csv
 import copy
+import sys
 
 #configuration:
 CATEGORIESFILE="..\Data\Categories.csv"
@@ -28,7 +29,7 @@ def main():
     
 def createOutputFile():
     try:
-        csvOut = open(OUTPUTFILE, 'w')
+        csvOut = open(OUTPUTFILE, 'wb')
         return csv.writer(csvOut, delimiter = ',')
     except:
         print "Exception creating output file. Will write result to screen"
@@ -42,7 +43,7 @@ def matchWordsToSentence(categories, sentences, output):
     for sentence in sentences.getSentences():
         currentRow = copy.deepcopy(emptyRow)
         logging.debug("sentence: {0}".format(sentence))
-        for word in sentence[0].split():
+        for word in sentence[0].strip().split():
             wordCategoryInt = categories.getWordsCategory(word)
             if(wordCategoryInt is not None):
                 currentRow[wordCategoryInt] = currentRow[wordCategoryInt] + 1
