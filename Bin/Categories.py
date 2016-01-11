@@ -21,7 +21,7 @@ class Categories:
                 for row in categoriesCSVFile:
                     for x in range(len(row)):
                         if(row[x] != ''):
-                            self.categoriesMap[row[x].lower()] = x
+                            self.categoriesMap[row[x].rstrip('*').lower()] = x
 
             categoriesLog.close()
         except csv.Error as e:
