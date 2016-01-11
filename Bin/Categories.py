@@ -37,7 +37,7 @@ class Categories:
     # Returns the name of the category for which the word belongs, or None
     def getWordsCategory(self, word):
         wordStartsWith = ''
-        for(categoryKey in self.categoriesMap.keys())
+        for categoryKey in self.categoriesMap.keys():
             if(categoryKey.startswith(word)):
                 wordStartsWith = categoryKey
                 break;
