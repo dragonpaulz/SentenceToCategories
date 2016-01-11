@@ -39,11 +39,11 @@ class Categories:
         word = word.lower()
         wordStartsWith = ''
         for categoryKey in self.categoriesMap.keys():
-            if(categoryKey.startswith(word)):
+            if(word.startswith(categoryKey)):
                 wordStartsWith = categoryKey
                 break;
 
         if(wordStartsWith in self.categoriesMap):
-            return self.categoriesMap[word]
+            return self.categoriesMap[wordStartsWith]
         else:
             return None
