@@ -21,7 +21,7 @@ class Categories:
                 for row in categoriesCSVFile:
                     for x in range(len(row)):
                         if(row[x] != ''):
-                            self.categoriesMap[row[x]] = x
+                            self.categoriesMap[row[x].lower()] = x
 
             categoriesLog.close()
         except csv.Error as e:
@@ -36,6 +36,7 @@ class Categories:
     
     # Returns the name of the category for which the word belongs, or None
     def getWordsCategory(self, word):
+        word = word.lower()
         wordStartsWith = ''
         for categoryKey in self.categoriesMap.keys():
             if(categoryKey.startswith(word)):
